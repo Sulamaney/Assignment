@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p style="text-align: center;">Ternary Operator:</p>
+        Syntax: condition ? expression1 : expression2 <br><br>
+        The ternary operator is a concise way to write simple conditional statements. <br>
+        It evaluates a condition and returns one of two expressions depending on whether the condition is true or false. <br>
+        It is primarily used for assigning values based on a condition within an expression. <br>
+        Suitable for simple conditional assignments but can become hard to read for complex conditions.
+                
+        <br><br><br><br>
+
+        <p style="text-align: center;">If-Else Statements:</p>
+        Syntax:
+        if (condition) {
+            // code block
+        } else {
+            // code block
+        } <br><br>
+        If-else statements are fundamental to programming languages. <br>
+        They allow for the execution of different blocks of code based on whether a condition evaluates to true or false. <br>
+        Suitable for handling complex conditions and multiple branches of execution. <br>
+        Offers greater flexibility compared to the ternary operator for handling complex scenarios.  
+
+        <br><br><br><br>
+
+        <p style="text-align: center;">Switch Statements:</p>
+        Syntax:
+        
+        <br>switch (expression) {
+            case value1:
+                // code block
+                break;
+            case value2:
+                // code block
+                break;
+            default:
+                // code block
+        } <br><br>
+        Switch statements allow the selection of one of many code blocks to be executed. <br>
+        They compare the expression value to multiple cases and execute the code block associated with the first matching case. <br>
+        Suitable for scenarios with a single expression to be evaluated against multiple possible values. <br>
+        Provides a clearer structure compared to nested if-else statements when handling multiple conditions against a single value. <br>
+                        
+                        
+                
+                
+
+        <script>
+            let currentHour=new Date().getHours();
+            let greet;
+
+            if(currentHour<6) {
+                greet='Have you prayed MOGRIB ?'
+            } else if (currentHour<2) {
+                greet='Have you prayed ZUHR ?'
+            } else if(currentHour<4) {
+                greet='Have you prayed AZR ?'
+            }else if(currentHour<7) {
+                greet='Have you prayed ZUBHI ?'
+            }else if(currentHour<9) {
+                greet='Have  you prayed ISHAI ?'
+            } else {
+                greet='good evening'
+            }
+            alert(greet)
+        </script>
+    </body>
+</html>
