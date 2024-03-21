@@ -3,17 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>CALCULATOR</title>
     </head>
     <body>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <div style="text-align: center;">
             <input type="text" id="tola" placeholder="firstnumber" style="padding: 3px 5px; font-size: 20px;">
 
-            <span id="mysymbol"></span>
+            <span id="my"></span>
             <br><br>
             <input type="text" id="tolu" placeholder="firstnumber" style="padding: 3px 5px; font-size: 20px;">
 
-            <span id="myoutput"></span> 
+            <span id="put"></span> 
         </div>
         <br><br>
         <div style="text-align: center;">
@@ -33,22 +47,11 @@
 
 
         <script>
-            // // PARAMETER
-            // function calcAge(yearofBirth){
-            //     let currentYear=new Date().getFullYear();
-            //     return currentYear-yearofBirth;
-
-            // }
-
-            // let userAge=prompt('which year were you born?');
-            // alert(`you are born in ${calcAge(userAge)}, you ought to have retire`);
-
             function minus(){
                 let firstnumber= document.getElementById('tola').value;
                 let secondnumber= document.getElementById('tolu').value;
 
-                document.getElementById('mysymbol').innerHTML="-"
-                document.getElementById('myoutput').innerHTML=`
+                document.getElementById('put').innerHTML=`
                 =${firstnumber-secondnumber}`
                 
             }
@@ -57,17 +60,16 @@
                 let firstnumber= document.getElementById('tola').value;
                 let secondnumber= document.getElementById('tolu').value;
 
-                document.getElementById('mysymbol').innerHTML="*"
-                document.getElementById('myoutput').innerHTML=`
+                document.getElementById('put').innerHTML=`
                 =${firstnumber*secondnumber}`
                 
             }
-
+            
+k 
             function divideit(){
                 let firstnumber= document.getElementById('tola').value;
                 let secondnumber= document.getElementById('tolu').value;
 
-                document.getElementById('mysymbol').innerHTML="/"
                 document.getElementById('myoutput').innerHTML=`
                 =${firstnumber/secondnumber}`
                 
@@ -77,12 +79,36 @@
                 let firstnumber= document.getElementById('tola').value;
                 let secondnumber= document.getElementById('tolu').value;
 
-                document.getElementById('mysymbol').innerHTML="+"
                 document.getElementById('myoutput').innerHTML=`
                 =${firstnumber+secondnumber}`
                 
             }
 
+            // PARAMETER
+            // function calcAge(yearofBirth){
+            //     let currentYear=new Date().getFullYear();
+            //     return currentYear-yearofBirth;
+
+            // }
+
+            let userAge=prompt('how are you ?');
+
+            if (userAge<65) {
+                `You have ${65- ${userAge}}`
+            } else if (userAge>=65) {
+                'You have ${65- $(userAge)}'
+            }
+            
+            
+            alert(userAge);
+
+            // alert(`you are ${calcAge(userAge)} years old, you ought to have retire`);
+
+            
+
+
+
         </script>
+
     </body>
 </html>
