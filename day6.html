@@ -58,18 +58,38 @@
 
             if(currentHour<6) {
                 greet='Have you prayed MOGRIB ?'
-            } else if (currentHour<2) {
+            } else if (currentHour>14) {
                 greet='Have you prayed ZUHR ?'
-            } else if(currentHour<4) {
+            } else if(currentHour>16) {
                 greet='Have you prayed AZR ?'
-            }else if(currentHour<7) {
+            }else if(currentHour<20) {
                 greet='Have you prayed ZUBHI ?'
-            }else if(currentHour<9) {
+            }else if(currentHour<21) {
                 greet='Have  you prayed ISHAI ?'
             } else {
-                greet='good evening'
+                greet=''
             }
             alert(greet)
+
+
+            let age=prompt('How Old is Nigeria?')
+
+            switch (age){
+                case '33':
+                    alert('too much');
+                    break;
+                case '59':
+                    alert('so close');
+                    break;
+                case '60': 
+                    alert('correct');
+                    break;
+                case '6': 
+                    alert('increase it a bit');
+                    break;
+                default: 
+                    alert('you are wrong')
+            }
         </script>
     </body>
 </html>
