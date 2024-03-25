@@ -2,20 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CALCULATOR</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrapg@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrapg@5.3.3/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
             
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /> 
             
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/bootstrap-icons.svg">
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="dist/js/bootstrap.min.js">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/bootstrap-icons.svg">
+        <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="dist/js/bootstrap.min.js">
   </head>
-  <body style="background-image: url(360_F_202179808_o2YPAXShv0rdjQSso7mqOqSprYAvhKEM.jpg); margin-top: 50px; margin-bottom: 50px; text-align: center;">
+  <body style="background-image: url(360_F_202179808_o2YPAXShv0rdjQSso7mqOqSprYAvhKEM.jpg); margin-top: 50px; margin-bottom: 50px;">
     <div style="text-align: center;" class="">
       <div class="dropdown" style="display: inline-block;">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -109,82 +109,27 @@
         </ul>
       </div>
     </div>
-
-    <div style="text-align: center;">
-          <br>
-          <p style="font-size: 19px; font-weight: bolder; background: white; padding: 20px 0px;">
-            DIFFERENCIATE BTW COMPARISONS AND LOGICAL OPEREATORS
-          </p> <br>
-          <p style="background: white;">
-            <strong>Comparisons:</strong> <br>
-            Comparisons are used to evaluate whether two values are equal, not equal, greater than, less than, etc.<br>
-            Common comparison operators include: <br><br>
-                Equal to (==) <br>
-                Not equal to (!=) <br>
-                Greater than (>) <br>
-                Less than (<) <br>
-                Greater than or equal to (>=) <br>
-                Less than or equal to (<=) <br><br>
-            Comparisons usually result in a boolean value (true or false) depending on whether the condition is met.
-          </p>
-          <p style="background-color: white;">
-            <strong>Logical Operators:</strong> <br>
-            Logical operators are used to combine multiple conditions and evaluate them together. <br>
-            Common logical operators include: <br><br>
-            AND (&& or 'and' in Python) <br>
-            OR (|| or 'or' in Python) <br>
-            NOT (! or 'not' in Python) <br><br>
-            Logical operators operate on boolean values and produce boolean results. <br><br>
-            AND returns true only if both conditions are true. <br>
-            OR returns true if at least one condition is true. <br>
-            NOT negates the result of the condition.          </p>
-    </div>
         
-    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-          
+        
     <script>
-            function minus(){
-                let firstnumber= document.getElementById('tola').value;
-                let secondnumber= document.getElementById('tolu').value;
-      
-                document.getElementById('mysymbol').innerHTML="-"
-                document.getElementById('myoutput').innerHTML=`
-                =${firstnumber-secondnumber}`
-                
+          function retirement(finage){
+                let currentYear=new Date().getFullYear();
+                let ageret=currentYear-finage;
+                let retage=65-ageret;
+
+                if(retage==0){
+                    alert("you although to have retire")
+                } else if(retage<0){
+                    alert(`you although to have retire you have used extra ${-retage}`)
+                } else {
+                    alert=(`you have ${retage} left`)
+                };
             }
-      
-            function multiply(){
-                let firstnumber= document.getElementById('tola').value;
-                let secondnumber= document.getElementById('tolu').value;
-      
-                document.getElementById('mysymbol').innerHTML="*"
-                document.getElementById('myoutput').innerHTML=`
-                =${firstnumber*secondnumber}`
-                
-            }
-      
-            function divideit(){
-                let firstnumber= document.getElementById('tola').value;
-                let secondnumber= document.getElementById('tolu').value;
-      
-                document.getElementById('mysymbol').innerHTML="/"
-                document.getElementById('myoutput').innerHTML=`
-                =${firstnumber/secondnumber}`
-                
-            }
-      
-            function addit(){
-                let firstnumber= Number(document.getElementById('tola').value);
-                let secondnumber= Number(document.getElementById('tolu').value);
-      
-                document.getElementById('mysymbol').innerHTML="+"
-                document.getElementById('myoutput').innerHTML=`
-                =${firstnumber +secondnumber}`
-                
-            }
-      
+            
+            let aaa=prompt('which year were you born')
+                retirement(aaa)
     </script>
   </body>
 </html>

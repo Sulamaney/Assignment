@@ -113,34 +113,58 @@
   <div style="text-align: center;">
       <br>
       <p style="font-size: 19px; font-weight: bolder; background: white; padding: 20px 0px;">
-        DIFFERENCES BETWEEN THE THREE WAYS YOU CAN IDENTIFY STRING IN JS
+        DIFFERENCES BTW LET, VAR AND CONST
       </p> <br>
       <p style="background: white;">
-        <strong>Single Quotes (') and Double Quotes ("):</strong> <br>
-        Single quotes and double quotes are the traditional ways of creating strings in JavaScript. They behave essentially the same, <br>
-        but using one or the other can be advantageous in certain situations, such as when the string itself contains one <br>
-        of the quote characters.
+        <strong>Scope:</strong> <br>
+        var: Variables declared with var are function-scoped or globally scoped. They are hoisted to the top of their containing function or script. <br><br>
+        let and const: Variables declared with let and const are block-scoped. They are only accessible within the block (enclosed by {}) in which they are defined.
         <br>
-        <img src="quote 1.png" class="img-fliud" style="width: 50%; margin-top: 20px; margin-bottom: 20px;" >
-        <br>
-        Both singleQuoted and doubleQuoted strings produce the same output. You can freely use single quotes inside double-quoted <br>
-        strings and vice versa without escaping them:
-        <br>
-        <img src="qoute 2.png" class="img-fliud" style="width: 50%; margin-top: 20px; margin-bottom: 20px;" >
-
-      <br>
       </p>
       <p style="background-color: white;">
-        <strong>Backticks (`):</strong> <br>
-        Backticks, also known as template literals, were introduced in ECMAScript 6 (ES6) and offer additional features compared to <br>
-        single or double quotes. They allow for string interpolation and multiline strings, making them more versatile.
+        <strong>Hoisting:</strong> <br>
+        var: Variables declared with var are hoisted to the top of their containing function or script. This means you can use a variable before <br>
+        it's declared without causing an error, although its value will be undefined. <br><br>
+        let and const: Variables declared with let and const are also hoisted, but they are not initialized until their declaration is evaluated. <br>
+        Accessing them before the declaration results in a ReferenceError.
         <br>
-        <img src="quote 3.png" class="img-fliud" style="width: 50%; margin-top: 20px; margin-bottom: 20px;" >
+      </p>
+      <p style="background-color: white;">
+        <strong>Reassignment:</strong> <br>
+        var and let: Variables declared with var and let can be reassigned new values. <br><br>
+        const: Variables declared with const cannot be reassigned after they have been initialized. However, for objects and arrays declared with const, <br>
+        the properties or elements of the object or array can be modified.
         <br>
-        Template literals allow you to embed expressions within ${} inside the string, which will be evaluated and concatenated with <br>
-        the rest of the string. They also support multiline strings without the need for escape characters:
+      </p>
+      <p style="background-color: white;">
+        <strong>Temporal Dead Zone (TDZ):</strong> <br>
+        let and const: Variables declared with let and const are in the Temporal Dead Zone (TDZ) from the start of the block until the declaration is encountered. <br>
+        Accessing them during this time results in a ReferenceError.<br><br>
+        var: Variables declared with var do not have a TDZ because they are initialized with the value undefined during hoisting.
         <br>
-        <img src="quote 4.png" class="img-fliud" style="width: 50%; margin-top: 20px; margin-bottom: 20px;" >
+      </p>
+
+
+      <br>
+      <p style="font-size: 19px; font-weight: bolder; background: white; padding: 20px 0px;">
+        SIMILARITIES BTW LET, VAR AND CONST
+      </p> <br>
+      
+      <p style="background-color: white;">
+        <strong>Declaration Syntax:</strong> <br>
+        All three (let, var, and const) are used for variable declaration. <br><br>
+        They are all followed by the variable name and an optional initializer (value assigned to the variable at the time of declaration).
+        <br>
+      </p>
+      <p style="background-color: white;">
+        <strong>Global Scope:</strong> <br>
+        When declared outside of any function, all three variables (let, var, and const) become properties of the global object (window in browsers).
+        <br>
+      </p>
+      <p  style="background-color: white;">
+        <strong>Lexical Scoping:</strong> <br>
+        They all follow lexical scoping rules, meaning they are resolved in the scope in which they are defined, not where they are executed.
+        <br>
       </p>
   </div>
     
