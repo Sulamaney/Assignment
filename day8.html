@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ola {
+            font-size: 20px;
+            color: red;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>
+        My name is Sulaiman
+    </h1>
+    <button class="btn1">GO</button>
+    <button class="btn2">BACK</button> -->
+
+    <h1>GAME OF GUESS</h1>
+    <input type="text" placeholder="Choose a number from 1-30" id="xam">
+
+    <h2>
+        start guess....
+    </h2>
+    <button class="btn1">GUESS</button>
+
+
+    <script>
+
+        let secretNumber=Math.trunc((Math.random()*30)+1)
+        console.log(secretNumber)
+
+        let me=document.querySelector('.btn1')
+        let we=document.querySelector('h2')
+
+        me.addEventListener('click', ()=>{
+            let userinfo=document.getElementById('xam').value;
+
+            if(userinfo<secretNumber) {
+                document.querySelector('h2').innerHTML='TOO LOW';
+            } else if (userinfo>secretNumber) {
+                document.querySelector('h2').innerHTML='TOO HIGH';
+            } else if(userinfo==secretNumber) {
+                document.querySelector('h2').innerHTML='CORRECT';
+            } else {
+                document.querySelector('h2').innerHTML='INVALID';
+            }
+        })
+
+
+
+
+
+
+
+        // let art=document.querySelector('.btn1')
+        // let game=document.querySelector('h1')
+
+        // art.addEventListener('click', ()=>{
+        //     let userinput=document.getElementById('put').value;
+
+        //     if(userinput>secretNumber){
+        //         document.querySelector('h2').innerHTML='TOO HIGH';
+        //     } else if(userinput<secretNumber){
+        //         document.querySelector('h2').innerHTML='TOO LOW';
+        //     } else if(userinput==secretNumber) {
+        //         document.querySelector('h2').innerHTML='CORRECT';
+        //     } else {
+        //         document.querySelector('h2').innerHTML='INVALID';
+        //     }
+        // })
+
+        
+
+
+
+
+
+
+
+        // function btn(){
+        //     let btnn=document.querySelector('userInput');
+        //     let userInput= getElementById('put').value;
+        // }
+        // if(userInput>secretNumber){
+            
+        // } else if(userInput<secretNumber){
+        //     'guess to low'
+        // } else if(userInput==secretNumber) {
+        //     'correct'
+        // } else {
+        //     'invalid'
+        // }
+
+
+
+        // let mybtn=document.querySelector('.btn1');
+        // let j;
+        // mybtn.addEventListener('click', ()=>{
+        //     j=document.querySelector('h1')
+        //     j.innerHTML='yti utyi try'
+        //     j.classList.add('ola')
+        // })
+       
+        // let mybtn2=document.querySelector('.btn2');
+        // mybtn2.addEventListener('click', ()=>{
+        //     j=document.querySelector('h1')
+        //     j.innerHTML='yti utyi try'
+        //     j.classList.remove('ola')
+        // })
+
+
+
+
+
+
+
+        // tayo=> {
+        //     m.classList.add('ola')
+        // }
+
+        // let m=document.querySelector='h1'
+        // go.addEventListener(
+        //     'click', tayo
+        // )
+        
+    </script>
+</body>
+</html>
