@@ -2,20 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hotel Booking</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrapg@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-            
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /> 
-            
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/bootstrap-icons.svg">
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="dist/js/bootstrap.min.js">
   </head>
-  <body style="background-image: url(360_F_202179808_o2YPAXShv0rdjQSso7mqOqSprYAvhKEM.jpg); margin-top: 50px; margin-bottom: 50px; text-align: center;">
+  <body style="background-image: url(360_F_202179808_o2YPAXShv0rdjQSso7mqOqSprYAvhKEM.jpg); margin-top: 50px; margin-bottom: 50px;">
     <div style="text-align: center;" class="">
       <div class="dropdown" style="display: inline-block;">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -117,7 +111,7 @@
           <li><a class="dropdown-item" href="day8.html">
             GUESS NUMBER GAME
           </a></li>
-          <li><a class="dropdown-item" href="">
+          <li><a class="dropdown-item" href="day8 (2).html">
             INVESTMENT CALCULATOR
           </a></li>
           <li><a class="dropdown-item" href="">
@@ -145,7 +139,7 @@
           </a></li>
         </ul>
       </div>
-  
+
       <div class="dropdown" style="display: inline-block;">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           DAY 10
@@ -159,98 +153,146 @@
           </a></li>
         </ul>
       </div>
-  
+
       <div class="dropdown" style="display: inline-block;">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           DAY 11
         </button>
         <ul class="dropdown-menu dropdown-menu-dark">
           <li><a class="dropdown-item" href="day11(2).html">
-          
+            HOTEL BOOKING
           </a></li>
           <li><a class="dropdown-item" href="day11.html">
-        
+            UBER APPLICATION
           </a></li>
         </ul>
       </div>
-  
+
     </div>
 
-    <div style="text-align: center;">
-          <br>
-          <p style="font-size: 19px; font-weight: bolder; background: white; padding: 20px 0px;">
-            DIFFERENCIATE BTW COMPARISONS AND LOGICAL OPEREATORS
-          </p> <br>
-          <p style="background: white;">
-            <strong>Comparisons:</strong> <br>
-            Comparisons are used to evaluate whether two values are equal, not equal, greater than, less than, etc.<br>
-            Common comparison operators include: <br><br>
-                Equal to (==) <br>
-                Not equal to (!=) <br>
-                Greater than (>) <br>
-                Less than (<) <br>
-                Greater than or equal to (>=) <br>
-                Less than or equal to (<=) <br><br>
-            Comparisons usually result in a boolean value (true or false) depending on whether the condition is met.
-          </p>
-          <p style="background-color: white;">
-            <strong>Logical Operators:</strong> <br>
-            Logical operators are used to combine multiple conditions and evaluate them together. <br>
-            Common logical operators include: <br><br>
-            AND (&& or 'and' in Python) <br>
-            OR (|| or 'or' in Python) <br>
-            NOT (! or 'not' in Python) <br><br>
-            Logical operators operate on boolean values and produce boolean results. <br><br>
-            AND returns true only if both conditions are true. <br>
-            OR returns true if at least one condition is true. <br>
-            NOT negates the result of the condition.          </p>
-    </div>
+    <span id="timeLeft"></span>
+    <br><br>
+    <br><br>
+    <select id="selectStart" onclick="selectType()">
+        <option value="" selected disabled>SELECT ACCOMODATION</option>
+        <option value="public">Public Accomodation</option>
+        <option value="hotel">Hotel Accomodation</option>
+    </select>
+    <br><br><br><br><br>
+
+
+      <select name="" id="roomTypeSelect" style="display: none;">  
+        <option selected disabled>Select Room Type</option>
+        <option value="5000">Sapphaire (#5;000)</option>
+        <option value="20000">Ruby (#20,000)</option>
+        <option value="100000">Diamond (#100,000)</option>
+      </select>
+
+      <input type="number" id="days" placeholder="Select Number of Days" oninput="roomtypecalc()">
+      <br>
+      <span id="fee"></span>
+      <br><br>
+      <button id="btnn">BOOK NOW</button>
+      
+
+
+    <script>
+      let bookNow= document.getElementById('btnn')
+
+      bookNow.addEventListener('click', ()=>{
+        let inputNow= document.getElementById('days').value;
+        let zm= inputNow*86400000
+        let now = new Date().getTime();
+        let distance= Number(zm+now)
+          
+          x=setInterval(function (){
+            
+
+            let now = new Date().getTime();
+            let baba= distance-now
+            let daysLeft= Math.floor(baba / (60*60*24*1000));
+            let hoursLeft= Math.floor(baba % (60*60*24*1000) / (60*60*1000));
+            let minuteLeft= Math.floor(baba % (60*60*1000)/(60*1000));
+            let secondsLeft= Math.floor(baba % (60*1000)/(1000));
+
+            // daysLeft= (daysLeft<10)? '0'+daysLeft:daysLeft;
+            // hoursLeft= (hoursLeft<10)? '0'+hoursLeft:hoursLeft;
+            // minuteLeft= (minuteLeft<10)? '0'+minuteLeft:minuteLeft;
+            // secondsLeft= (secondsLeft<10)? '0'+secondsLeft:secondsLeft;
+
+            document.getElementById('timeLeft').innerHTML= `TIME LEFT TO VACATE ROOM : ${daysLeft}D: ${hoursLeft}H: ${minuteLeft}M:${secondsLeft}s `
+
+            if(distance<=0){
+              clearInterval(x);
+            }
+          },1000)
+         
+      })
         
-    
+          
+        
+
+      // let totalTimeUsed =function(){
+      //       let mybd = new Date('May 10, 2024 13:57:00').getTime();
+      //       let now = new Date().getTime();
+      //       let distance= mybd-now
+
+      //       let daysLeft= Math.floor(distance/(60*60*24*1000));
+      //       let hoursLeft= Math.floor(distance%(60*60*24*1000)/(60*60*1000));
+      //       let minuteLeft= Math.floor(distance%(60*60*1000)/(60*1000));
+      //       let secondsLeft= Math.floor(distance%(60*1000)/(1000));
+
+      //       daysLeft= (daysLeft<10)? '0'+daysLeft:daysLeft;
+      //       hoursLeft= (hoursLeft<10)? '0'+hoursLeft:hoursLeft;
+      //       minuteLeft= (minuteLeft<10)? '0'+minuteLeft:minuteLeft;
+      //       secondsLeft= (secondsLeft<10)? '0'+secondsLeft:secondsLeft;
+
+      //       document.getElementById('birthday').innerHTML= `TIME LEFT TO VACATE ROOM : ${daysLeft}D: ${hoursLeft}H: ${minuteLeft}M:${secondsLeft}s `
+
+      //       if(distance<=0){
+      //       clearInterval(x);
+      //       document.getElementById('birthday').innerHTML= 'HAPPY BIRTHDAY SULA';
+      //       document.querySelector('body').style.background='green';
+      //       document.querySelector('body').style.color= 'white';
+      //       }
+      //   }
+
+      // let x=setInterval(totalTimeUsed,1000)
+      
+     
+      function selectType(){
+        const roomType= document.getElementById('roomTypeSelect');
+        const select= document.getElementById('select');
+        const public= document.getElementById('public');
+        const hotel= document.getElementById('hotel');
+
+
+
+        if(selectStart.value=='hotel'){
+           roomType.style.display= 'block'
+          } else {
+              roomType.style.display= 'none'
+          }
+      }
+
+
+      function roomtypecalc(){ 
+        const roomType= document.getElementById('roomTypeSelect').value;
+        const fola=document.getElementById('days').value;
+        const feess= document.getElementById('fee')
+
+        let x=Number(roomType*fola);
+        
+        feess.innerHTML=`your Fee using Sapphaire Room for ${fola}days is # ${x}`
+
+      }
+        
+    </script>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-          
-    <script>
-            function minus(){
-                let firstnumber= document.getElementById('tola').value;
-                let secondnumber= document.getElementById('tolu').value;
-      
-                document.getElementById('mysymbol').innerHTML="-"
-                document.getElementById('myoutput').innerHTML=`
-                =${firstnumber-secondnumber}`
-                
-            }
-      
-            function multiply(){
-                let firstnumber= document.getElementById('tola').value;
-                let secondnumber= document.getElementById('tolu').value;
-      
-                document.getElementById('mysymbol').innerHTML="*"
-                document.getElementById('myoutput').innerHTML=`
-                =${firstnumber*secondnumber}`
-                
-            }
-      
-            function divideit(){
-                let firstnumber= document.getElementById('tola').value;
-                let secondnumber= document.getElementById('tolu').value;
-      
-                document.getElementById('mysymbol').innerHTML="/"
-                document.getElementById('myoutput').innerHTML=`
-                =${firstnumber/secondnumber}`
-                
-            }
-      
-            function addit(){
-                let firstnumber= Number(document.getElementById('tola').value);
-                let secondnumber= Number(document.getElementById('tolu').value);
-      
-                document.getElementById('mysymbol').innerHTML="+"
-                document.getElementById('myoutput').innerHTML=`
-                =${firstnumber +secondnumber}`
-                
-            }
-      
-    </script>
   </body>
 </html>

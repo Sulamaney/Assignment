@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+
+    <input type="text" id="task" placeholder="task">
+    <input type="text" id="time to start" placeholder="time to start">
+    <input type="" id="time to end" placeholder="time to end">
+    
+
+    <button style="background: red;" onclick="todo()">Add Task</button>
+    <br><br>
+    <span id="spanner"></span>
+    <table border="1" cellpadding="10" cellspacing="0" id="tabu">
+        <tr>
+            <td>Task</td>
+            <td>Time Started</td>
+            <td>Time Ended</td>
+            <td>Countdown</td>
+            <td>Done</td>
+            <td>Undo</td>
+            <td>Edit</td>
+        </tr>
+    </table>
+
+    <script>
+        function todo(){
+            const a=document.getElementById('task').value;
+            const b=document.createTextNode(a)
+            const c=document.createElement('td')
+
+            c.appendChild(b);
+
+            const d=document.getElementById('time to start').value;
+            const e=document.createTextNode(d)
+            const f=document.createElement('td')
+
+            f.appendChild(e);
+
+            const de=document.getElementById('time to end').value;
+            const ee=document.createTextNode(de)
+            const fe=document.createElement('td')
+            fe.appendChild(ee);
+
+            const iron=document.createElement('tr')
+            iron.appendChild(c)
+            iron.appendChild(f)
+            iron.appendChild(fe)
+
+
+            const tabu=document.getElementById('tabu')
+            tabu.append(iron)
+
+            const module=document.getElementById('spanner');
+            if(a=='' || d=='' || de==''){
+
+                module.innerHTML='Input Task'
+                module.style.color='red'
+            }
+
+            
+            let inputNow= document.createElement('').value;
+            const ion=document.createElement('tr')
+            const mett=document.createTextNode()
+            let zm= inputNow*86400000
+            let now = new Date().getTime();
+            let distance= Number(zm+now)
+          
+          x=setInterval(function (){
+            let now = new Date().getTime();
+            let baba= distance-now
+            let daysLeft= Math.floor(baba / (60*60*24*1000));
+            let hoursLeft= Math.floor(baba % (60*60*24*1000) / (60*60*1000));
+            let minuteLeft= Math.floor(baba % (60*60*1000)/(60*1000));
+            let secondsLeft= Math.floor(baba % (60*1000)/(1000));
+
+            // daysLeft= (daysLeft<10)? '0'+daysLeft:daysLeft;
+            // hoursLeft= (hoursLeft<10)? '0'+hoursLeft:hoursLeft;
+            // minuteLeft= (minuteLeft<10)? '0'+minuteLeft:minuteLeft;
+            // secondsLeft= (secondsLeft<10)? '0'+secondsLeft:secondsLeft;
+
+            document.getElementById('timeLeft').innerHTML= `TIME LEFT TO VACATE ROOM : ${daysLeft}D: ${hoursLeft}H: ${minuteLeft}M:${secondsLeft}s `
+
+            if(distance<=0){
+              clearInterval(x);
+            }
+          },1000)
+         
+      
+        
+
+        }
+    </script>
+</body>
+</html>
